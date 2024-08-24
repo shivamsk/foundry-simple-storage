@@ -15,6 +15,21 @@ https://book.getfoundry.sh/
 
 ## Usage
 
+### Compile 
+```shell
+$ forge compile
+```
+To Deploy : 
+forge create SimpleStorage --interactive
+
+cast wallet import defaultKey --interactive 
+cast wallet list 
+
+Solidity Scripting : ( Deployment)
+https://book.getfoundry.sh/tutorials/solidity-scripting
+
+
+0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
 ### Build
 
 ```shell
