@@ -48,6 +48,28 @@ forge script script/DeploySimpleStorage.s.sol --rpc-url $SEPOLIA_RPC_URL --broad
 // Formats the code
 forge fmt 
 
+
+
+### Foundry zkSync
+
+Detected your preferred shell is zsh and added foundryup-zksync to PATH.
+Run 'source /Users/siva/.zshenv' or start a new terminal session to use foundryup-zksync.
+Then, simply run 'foundryup-zksync' to install foundry-zksync.
+Sourcing the shell configuration file: '/Users/siva/.zshenv'
+Running foundryup-zksync setup...
+
+
+```
+// Installs vanilla foundry
+foundryup 
+
+// To go to foundry-zkysnc 
+foundryup-zksync
+
+forge build --zksync
+```
+
+
 ### Build
 
 ```shell
@@ -88,6 +110,9 @@ $ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --pri
 
 ```shell
 $ cast <subcommand>
+
+# To convert Dex to Decima
+$ cast to-base 0x67613 dec
 ```
 
 ### Help
@@ -97,3 +122,26 @@ $ forge --help
 $ anvil --help
 $ cast --help
 ```
+
+
+### Gas Calculation / Estimation
+
+- Get the Gas Used from broadcast/run/xxx.json
+    - cast to-base 0x67613 dec
+    - 423443
+- Get the latest ETH fees(Gwei) from Etherscan
+    - Ex: https://etherscan.io/tx/0x62e286951975d0dd8dda4650d03fb386a906f95659455a90fe6e94bb0c5dcd8a
+    - Gas Price : 0.606 Gwei
+- Gas Cost to deploy : Gas Used * Gas Price 
+    - 423443 * 0.606 
+    - 256606.458 Gwei
+- Go to https://eth-converter.com/
+    - Use Gas cost to get the price in Ether and USD 
+    - $0.63
+- https://l2fees.info/
+    - To compare the fees in l2 networks 
+
+
+### References : 
+- https://github.com/Cyfrin/foundry-simple-storage-cu
+- https://updraft.cyfrin.io/courses/foundry/foundry-simple-storage/why-l2

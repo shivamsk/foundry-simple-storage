@@ -8,6 +8,8 @@ out/
 /broadcast/**/dry-run/
 /broadcast/
 
+
+zkout/
 # Docs
 docs/
 
